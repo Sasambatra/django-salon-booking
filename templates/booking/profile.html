@@ -1,0 +1,7 @@
+{% extends "booking/base.html" %}
+{% load i18n booking_text %}
+{% block title %}{% translate "Your account" %}{% endblock %}
+{% block content %}
+<p class="eyebrow">{% translate "Your studio account" %}</p><h1>{% translate "Your account" %}</h1><p>{{ user.email }}</p>
+<ul class="account-links"><li><a href="{% url 'my-bookings' %}">{% translate "My bookings and receipts" %}</a></li><li><a href="{% url 'account_email' %}">{% translate "Email addresses" %}</a></li><li><a href="{% url 'account_change_password' %}">{% translate "Change password" %}</a></li><li><a href="{% url 'mfa_index' %}">{% translate "Two-factor authentication and recovery codes" %}</a></li>{% if user.is_staff %}<li><a href="{% url 'admin:index' %}">{% translate "Studio administration" %}</a></li>{% endif %}</ul>
+{% endblock %}

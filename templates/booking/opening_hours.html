@@ -1,0 +1,27 @@
+{% extends "booking/base.html" %}
+{% load i18n booking_text %}
+
+{% block title %}{% translate "Opening hours" %}{% endblock %}
+
+{% block content %}
+  <a class="back-link" href="{% url 'service-card' %}"><span aria-hidden="true">←</span> {% translate "Back to haircut" %}</a>
+  <div class="page-heading">
+    <p class="eyebrow">{% translate "Plan a little time for yourself" %}</p>
+    <h1>{% translate "Opening hours" %}</h1>
+    <p class="intro">{% translate "Six days to find your fresh start." %}</p>
+  </div>
+  <div class="content-grid">
+    <article class="panel hours-card">
+      <p class="eyebrow">{% translate "The weekly rhythm" %}</p>
+      <p class="hours-line">{% translate "Monday–Saturday: 09:00–18:00" %}</p>
+      <p class="hours-line closed">{% translate "Sunday: closed" %}</p>
+      <p class="muted">{% translate "For a 30-minute haircut, the latest start is 17:30." %}</p>
+      <a class="button" href="{% url 'choose-employee' %}">{% translate "Choose an employee" %} <span aria-hidden="true">↗</span></a>
+    </article>
+    <aside class="studio-note">
+      <p class="eyebrow">{% translate "When plans change" %}</p>
+      <h2>{% blocktranslate %}A little<br>notice helps.{% endblocktranslate %}</h2>
+      <p>{% translate "Cancellation is allowed until two hours before your appointment, including exactly two hours before the start." %}</p>
+    </aside>
+  </div>
+{% endblock %}

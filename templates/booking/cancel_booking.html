@@ -1,0 +1,9 @@
+{% extends "booking/base.html" %}
+{% load i18n booking_text %}
+{% block title %}{% translate "Cancel booking" %}{% endblock %}
+{% block content %}
+<a class="back-link" href="{% url 'booking-detail' booking.pk %}">← {% translate "Booking details" %}</a>
+<article class="panel narrow-panel"><p class="eyebrow">{% translate "When plans change" %}</p><h1>{% translate "Cancel this visit?" %}</h1><p>{% blocktranslate with service=booking.service_name|service_title employee=booking.employee_name date=booking.starts_at|date:"j E Y, H:i" %}{{ service }} with {{ employee }}, {{ date }} Moscow time.{% endblocktranslate %}</p>
+{% if booking.can_cancel %}<p>{% blocktranslate with price=booking.price_rub %}Any successful demo payment will be refunded in full: {{ price }} RUB.{% endblocktranslate %}</p><form method="post">{% csrf_token %}<button class="button" type="submit">{% translate "Confirm cancellation" %}</button></form>{% else %}<p class="notice">{% translate "This booking can no longer be cancelled online. Confirmed visits require at least two hours' notice." %}</p>{% endif %}
+</article>
+{% endblock %}

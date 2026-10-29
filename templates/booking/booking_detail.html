@@ -1,0 +1,18 @@
+{% extends "booking/base.html" %}
+{% load i18n booking_text %}
+{% block title %}{% translate "Booking details" %}{% endblock %}
+{% block content %}
+<a class="back-link" href="{% url 'my-bookings' %}">← {% translate "My bookings" %}</a>
+<div class="page-heading"><p class="eyebrow">{{ display_status }}</p><h1>{% translate "Your appointment" %}</h1></div>
+<div class="content-grid">
+  <article class="panel"><h2>{{ booking.service_name|service_title }}</h2><dl class="facts"><dt>{% translate "Employee" %}</dt><dd>{{ booking.employee_name }}</dd><dt>{% translate "Date" %}</dt><dd>{{ booking.starts_at|date:"l, j E Y" }}</dd><dt>{% translate "Time" %}</dt><dd>{{ booking.starts_at|date:"H:i" }}–{{ booking.ends_at|date:"H:i" }} {% translate "Moscow time" %}</dd><dt>{% translate "Agreed price" %}</dt><dd>{% blocktranslate with price=booking.price_rub %}{{ price }} RUB{% endblocktranslate %}</dd><dt>{% translate "Reference" %}</dt><dd class="reference">{{ booking.pk }}</dd><dt>{% translate "Demo payment" %}</dt><dd>{{ payment_display }}</dd></dl>
+    {% if booking.hold_is_live %}<a class="button" href="{% url 'booking-checkout' booking.pk %}">{% translate "Continue demo checkout" %} <span aria-hidden="true">↗</span></a>{% endif %}
+    {% if booking.can_cancel %}<p class="action-gap"><a class="text-link" href="{% url 'booking-cancel' booking.pk %}">{% translate "Cancel this booking" %}</a></p>{% endif %}
+    {% if status_code == "expired" %}<p class="notice">{% translate "The payment hold expired. No demo charge was made and the time was released." %}</p>{% endif %}
+    {% if booking.payment.status == "refunded" %}<p class="notice success">{% blocktranslate with price=booking.price_rub %}Your full demo refund of {{ price }} RUB is complete.{% endblocktranslate %}</p>{% endif %}
+    {% if booking.payment.status == "failed" %}<p class="notice">{% translate "No demo payment was taken. You can choose another appointment." %}</p>{% endif %}
+    {% if booking.status == "confirmed" and not booking.can_cancel %}<p class="form-note">{% translate "Online cancellation closes two hours before the appointment. Contact the studio for later changes." %}</p>{% endif %}
+  </article>
+  <aside class="studio-note"><p class="eyebrow">{% translate "Clear from the start" %}</p><h2>{% translate "A little notice helps." %}</h2><p>{% translate "Cancel at least two hours before the appointment for a full demo refund. Exactly two hours before is included." %}</p><p class="form-note">{% translate "No real payments or refunds occur." %}</p><a class="text-link" href="{% url 'choose-employee' %}">{% translate "Plan another visit" %} ↗</a></aside>
+</div>
+{% endblock %}

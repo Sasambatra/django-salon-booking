@@ -1,0 +1,10 @@
+Django==5.2.18
+psycopg[binary]==3.3.6
+django-allauth[mfa]==65.20.1
+asgiref==3.12.1
+sqlparse==0.6.0
+qrcode==8.2
+fido2==2.2.1
+cryptography==50.0.2
+cffi==2.1.1
+pycparser==3.12

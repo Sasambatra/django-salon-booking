@@ -1,0 +1,17 @@
+{% extends "booking/base.html" %}
+{% load i18n booking_text %}
+{% block title %}{% translate "My bookings" %}{% endblock %}
+{% block content %}
+<div class="page-heading top-space"><p class="eyebrow">{% translate "Your time, all together" %}</p><h1>{% translate "My bookings" %}</h1><p class="intro">{% translate "Upcoming visits, payment holds and your appointment history." %}</p></div>
+<a class="button" href="{% url 'choose-employee' %}">{% translate "Book another visit" %} <span aria-hidden="true">↗</span></a>
+<div class="booking-list">
+{% for booking in bookings %}
+  <article class="panel booking-row">
+    <div><p class="eyebrow">{{ booking.display_status }}</p><h2>{{ booking.service_name|service_title }}</h2><p>{{ booking.starts_at|date:"l, j E Y" }} · {{ booking.starts_at|date:"H:i" }}–{{ booking.ends_at|date:"H:i" }} {% translate "Moscow time" %}</p><p class="muted">{{ booking.employee_name }} · {% blocktranslate with price=booking.price_rub %}{{ price }} RUB{% endblocktranslate %}</p></div>
+    <a class="button button-small" href="{% url 'booking-detail' booking.pk %}">{% translate "View booking" %} <span aria-hidden="true">↗</span></a>
+  </article>
+{% empty %}
+  <div class="panel empty-state"><h2>{% translate "Your first visit starts here." %}</h2><p>{% translate "No bookings yet. Choose an employee and a time that works for you." %}</p></div>
+{% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,61 @@
+name: Django and PostgreSQL checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: checks-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    services:
+      postgres:
+        image: postgres:18
+        env:
+          POSTGRES_DB: room_booking
+          POSTGRES_USER: postgres
+          # This credential belongs only to the disposable CI container.
+          POSTGRES_PASSWORD: isolated-ci-database
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d room_booking"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      DJANGO_DEBUG: "true"
+      DJANGO_ALLOWED_HOSTS: localhost,127.0.0.1,testserver
+      DB_NAME: room_booking
+      DB_USER: postgres
+      DB_PASSWORD: isolated-ci-database
+      DB_HOST: 127.0.0.1
+      DB_PORT: "5432"
+      EMAIL_BACKEND: django.core.mail.backends.locmem.EmailBackend
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Select Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.14"
+          cache: pip
+      - name: Prepare isolated environment
+        run: |
+          python -m venv .venv
+          .venv/bin/python -m pip install -r requirements.txt
+          .venv/bin/python -c "import secrets; print('DJANGO_SECRET_KEY=' + secrets.token_urlsafe(64))" >> "$GITHUB_ENV"
+      - name: Check pinned dependencies
+        run: .venv/bin/python -m pip check
+      - name: Check source, translations, migrations and tests
+        run: bash scripts/check.sh

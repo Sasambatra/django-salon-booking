@@ -1,0 +1,64 @@
+{% extends "booking/base.html" %}
+{% load i18n booking_text %}
+
+{% block title %}{% translate "Preferred date" %}{% endblock %}
+
+{% block content %}
+  <a class="back-link" href="{% url 'choose-employee' %}?employee={{ employee.pk }}"><span aria-hidden="true">←</span> {% translate "Change employee" %}</a>
+  <div class="page-heading">
+    <p class="eyebrow">{% translate "Make a little room in your week" %}</p>
+    <h1>{% translate "Preferred date" %}</h1>
+    <p class="intro">{% blocktranslate with employee=employee.name %}Choose a day and time for your visit with {{ employee }}. All times are Moscow time.{% endblocktranslate %}</p>
+  </div>
+  <div class="content-grid">
+    <article class="panel date-panel">
+      <p class="step-label">{% translate "Your next visit" %}</p>
+      <form class="date-form" method="get" action="{% url 'choose-date' %}" aria-describedby="date-note">
+        <input type="hidden" name="employee" value="{{ employee.pk }}">
+        {{ form.as_p }}
+        <button class="button button-full" type="submit">{% translate "Show available times" %} <span aria-hidden="true">↗</span></button>
+      </form>
+      <p class="form-note" id="date-note">{% translate "Book up to 60 days ahead. Choosing a date does not reserve an appointment." %}</p>
+      {% if selected_date %}
+        <div class="date-result" role="status">
+          <p class="eyebrow">{% translate "Your preferred day" %}</p>
+          <p>{% blocktranslate with day=selected_date %}Selected date: {{ day }}{% endblocktranslate %}</p>
+          <p>{% blocktranslate with employee=employee.name %}Selected employee: {{ employee }}{% endblocktranslate %}</p>
+        </div>
+        <h2 class="times-heading">{% translate "Available times" %}</h2>
+        {% if starts %}
+          {% if not user.is_authenticated %}<p>{% url 'account_login' as login_url %}{% url 'account_signup' as signup_url %}{% blocktranslate with next=request.get_full_path|urlencode %}<a href="{{ login_url }}?next={{ next }}">Sign in</a> or <a href="{{ signup_url }}?next={{ next }}">create an account</a> to book a time.{% endblocktranslate %}</p>{% endif %}
+          <div class="slot-grid">
+          {% for start in starts %}
+            {% if user.is_authenticated %}
+              <form method="post" action="{% url 'booking-create' %}">
+                {% csrf_token %}
+                <input type="hidden" name="employee" value="{{ employee.pk }}">
+                <input type="hidden" name="date" value="{{ selected_date|date:'Y-m-d' }}">
+                <input type="hidden" name="time" value="{{ start|date:'H:i' }}">
+                <input type="hidden" name="request_key" value="{{ request_key }}">
+                <button class="slot-button" type="submit" aria-label="{% blocktranslate with time=start|date:"H:i" %}Book {{ time }} Moscow time{% endblocktranslate %}">{{ start|date:'H:i' }}</button>
+              </form>
+            {% else %}
+              <a class="slot-button" href="{% url 'account_login' %}?next={{ request.get_full_path|urlencode }}">{{ start|date:'H:i' }}</a>
+            {% endif %}
+          {% endfor %}
+          </div>
+          <p class="form-note">{% translate "Choosing a time holds it for 10 minutes while you complete demo checkout." %}</p>
+        {% else %}
+          <p class="notice">{% translate "No times remain on this day. Try another date or employee." %}</p>
+        {% endif %}
+      {% endif %}
+    </article>
+    <aside class="studio-note">
+      <p class="eyebrow">{% translate "Keep it simple" %}</p>
+      <h2>{{ service.name|service_title }}</h2>
+      <p>{% blocktranslate with employee=employee.name %}Employee: {{ employee }}{% endblocktranslate %}</p>
+      <p>{% blocktranslate with price=service.price_rub %}Price: {{ price }} RUB{% endblocktranslate %}</p>
+      <p>{% blocktranslate with minutes=service.duration_minutes %}Duration: {{ minutes }} minutes{% endblocktranslate %}</p>
+      <hr>
+      <p>{% translate "Monday–Saturday, 09:00–18:00." %}<br>{% translate "Closed on Sunday." %}</p>
+      <a class="text-link" href="{% url 'opening-hours' %}">{% translate "View opening hours" %} <span aria-hidden="true">↗</span></a>
+    </aside>
+  </div>
+{% endblock %}

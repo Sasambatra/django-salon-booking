@@ -1,0 +1,8 @@
+{% extends "account/base_entrance.html" %}
+{% load i18n booking_text %}
+{% block head_title %}{% translate "Verify your email" %}{% endblock %}
+{% block content %}
+<h1>{% translate "Verify your email" %}</h1><p>{% translate "Open the verification message and follow its link to finish creating your account." %}</p>
+{% if local_email %}<div class="notice"><strong>{% translate "Local demo email delivery" %}</strong><p>{% blocktranslate %}Email is saved on this computer instead of sent to an inbox. In the project's Ubuntu terminal, run <code>.venv/bin/python manage.py show_email</code> to read the latest message and open its verification link.{% endblocktranslate %}</p></div>{% endif %}
+<p><a href="{% url 'account_login' %}">{% translate "Return to sign in" %}</a></p>
+{% endblock %}

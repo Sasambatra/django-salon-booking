@@ -1,0 +1,2 @@
+{% extends "booking/base.html" %}
+{% load i18n booking_text %}{% block title %}{% translate "Page not found" %}{% endblock %}{% block content %}<article class="panel narrow-panel"><h1>{% translate "Page not found" %}</h1><p>{% translate "This address is unavailable or the booking belongs to another account." %}</p><a class="button" href="{% url 'service-list' %}">{% translate "Back to services" %}</a></article>{% endblock %}

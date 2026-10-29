@@ -1,0 +1,11 @@
+[
+  {
+    "model": "booking.service",
+    "pk": 1,
+    "fields": {
+      "name": "Haircut appointment",
+      "price_rub": 300,
+      "duration_minutes": 30
+    }
+  }
+]

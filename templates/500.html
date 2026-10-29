@@ -1,0 +1,2 @@
+{% extends "booking/base.html" %}
+{% load i18n booking_text %}{% block title %}{% translate "Please try again" %}{% endblock %}{% block content %}<article class="panel narrow-panel"><h1>{% translate "Please try again" %}</h1><p>{% translate "We could not complete that request. Check My bookings before trying another payment." %}</p><a class="button" href="{% url 'my-bookings' %}">{% translate "My bookings" %}</a></article>{% endblock %}

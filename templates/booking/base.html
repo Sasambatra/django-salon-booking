@@ -1,0 +1,54 @@
+{% load static i18n %}
+{% get_current_language as current_language %}
+<!doctype html>
+<html lang="{{ current_language }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#153e35">
+  <meta name="description" content="{% block meta_description %}{% translate "Explore our 300 RUB, 30-minute haircut and choose an employee and preferred date for your visit." %}{% endblock %}">
+  <title>{% block title %}{% translate "Haircut booking" %}{% endblock %} | {% translate "Haircut studio" %}</title>
+  <link rel="stylesheet" href="{% static 'booking/service-card.css' %}">
+  <link rel="icon" type="image/svg+xml" href="{% static 'booking/favicon.svg' %}">
+  <script src="{% static 'booking/site.js' %}" defer></script>
+  {% block extra_head %}{% endblock %}
+</head>
+<body>
+  <a class="skip-link" href="#main-content">{% translate "Skip to content" %}</a>
+  <header class="site-header">
+    <a class="brand" href="{% url 'service-list' %}" aria-label="{% translate "Haircut studio home" %}">
+      <span class="brand-mark" aria-hidden="true">h.</span>
+      <span>{% translate "Haircut studio" %}<span class="brand-caption">{% translate "A little time for yourself." %}</span></span>
+    </a>
+    <nav aria-label="{% translate "Main navigation" %}">
+      <a href="{% url 'service-list' %}"{% if request.resolver_match.url_name == 'service-list' or request.resolver_match.url_name == 'home' %} aria-current="page"{% endif %}>{% translate "Services" %}</a>
+      <a href="{% url 'opening-hours' %}"{% if request.resolver_match.url_name == 'opening-hours' %} aria-current="page"{% endif %}>{% translate "Opening hours" %}</a>
+      {% if user.is_authenticated %}
+        <a href="{% url 'my-bookings' %}">{% translate "My bookings" %}</a>
+        <a href="{% url 'profile' %}">{% translate "Account" %}</a>
+        <form method="post" action="{% url 'account_logout' %}">{% csrf_token %}<button class="nav-link" type="submit">{% translate "Sign out" %}</button></form>
+      {% else %}
+        <a href="{% url 'account_login' %}">{% translate "Sign in" %}</a>
+      {% endif %}
+      <a class="button button-small" href="{% url 'choose-employee' %}"{% if request.resolver_match.url_name == 'choose-employee' %} aria-current="page"{% endif %}>{% translate "Choose an employee" %} <span aria-hidden="true">↗</span></a>
+    </nav>
+    <form class="language-switcher" method="post" action="{% url 'set_language' %}" aria-label="{% translate 'Website language' %}">
+      {% csrf_token %}
+      <input type="hidden" name="next" value="{{ request.get_full_path }}">
+      <button type="submit" name="language" value="ru" lang="ru" aria-pressed="{% if current_language == 'ru' %}true{% else %}false{% endif %}">Русский</button>
+      <button type="submit" name="language" value="en" lang="en" aria-pressed="{% if current_language == 'en' %}true{% else %}false{% endif %}">English</button>
+    </form>
+  </header>
+  <div class="demo-banner"><strong>{% translate "Demo payments." %}</strong> {% translate "Payments and refunds are simulated. No real money is charged. All appointment times are Moscow time." %}</div>
+  {% if messages %}<div class="page-shell messages" aria-live="polite">{% for message in messages %}<p class="notice {{ message.tags }}">{{ message }}</p>{% endfor %}</div>{% endif %}
+  <main class="page-shell{% if is_account %} account-shell{% endif %}" id="main-content" tabindex="-1">
+    {% block content %}{% endblock %}
+  </main>
+  <footer class="site-footer">
+    <p>{% translate "Good hair. A little more you." %}</p>
+    <a href="{% url 'about-studio' %}">{% translate "About the studio" %}</a>
+    <a href="{% url 'opening-hours' %}">{% translate "Plan your visit" %} <span aria-hidden="true">↗</span></a>
+  </footer>
+  {% block extra_body %}{% endblock %}
+</body>
+</html>

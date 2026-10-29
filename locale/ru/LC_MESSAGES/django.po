@@ -1,0 +1,574 @@
+# Russian translations for the booking website.
+# English source text is the English version.
+
+msgid ""
+msgstr "Project-Id-Version: room-booking\nLanguage: ru\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#, python-format
+msgid "%(price)s RUB"
+msgstr "%(price)s RUB"
+
+#, python-format
+msgid "%(service)s with %(employee)s, %(date)s Moscow time."
+msgstr "%(service)s, мастер %(employee)s, %(date)s мск."
+
+#, python-format
+msgid "<a href=\"%(login_url)s?next=%(next)s\">Sign in</a> or <a href=\"%(signup_url)s?next=%(next)s\">create an account</a> to book a time."
+msgstr "Чтобы записаться, <a href=\"%(login_url)s?next=%(next)s\">войдите</a> или <a href=\"%(signup_url)s?next=%(next)s\">создайте аккаунт</a>."
+
+msgid "A confirmed visit."
+msgstr "Вы записаны."
+
+msgid "A fresh cut.<br>A fresh start."
+msgstr "Новая стрижка.<br>Новое настроение."
+
+msgid "A fresh start for your everyday. A straightforward appointment, with the price and time clear before you begin."
+msgstr "Новый образ для каждого дня. Простая запись: цена и длительность известны заранее."
+
+msgid "A good time to visit"
+msgstr "Удобное время для визита"
+
+msgid "A little notice helps."
+msgstr "Предупредите заранее."
+
+msgid "A little time for yourself."
+msgstr "Немного времени для себя."
+
+msgid "A little time, just for you"
+msgstr "Немного времени только для вас"
+
+msgid "A little time, set aside"
+msgstr "Время для вас"
+
+msgid "A little<br>notice helps."
+msgstr "Предупредите<br>заранее."
+
+msgid "A moment for you"
+msgstr "Момент для себя"
+
+msgid "A straightforward haircut appointment, with clear prices and time set aside for you."
+msgstr "Простая запись на стрижку: понятная цена и время только для вас."
+
+msgid "About the studio"
+msgstr "О студии"
+
+msgid "Account"
+msgstr "Аккаунт"
+
+msgid "After a successful simulation, find the appointment in My bookings."
+msgstr "После успешной демооплаты запись появится в разделе «Мои записи»."
+
+msgid "Agreed price"
+msgstr "Согласованная цена"
+
+msgid "All appointment times are Moscow time."
+msgstr "Всё время записи указано по Москве."
+
+#, python-format
+msgid "Any successful demo payment will be refunded in full: %(price)s RUB."
+msgstr "Если демооплата прошла успешно, она будет полностью возвращена: %(price)s RUB."
+
+msgid "Appointments, staff and availability"
+msgstr "Записи, мастера и свободное время"
+
+msgid "Available times"
+msgstr "Свободное время"
+
+msgid "Awaiting demo payment"
+msgstr "Ожидает демооплаты"
+
+msgid "Back to haircut"
+msgstr "К описанию стрижки"
+
+msgid "Back to services"
+msgstr "К списку услуг"
+
+#, python-format
+msgid "Book %(time)s Moscow time"
+msgstr "Записаться на %(time)s мск"
+
+msgid "Book another visit"
+msgstr "Записаться ещё раз"
+
+msgid "Book up to 60 days ahead. Choosing a date does not reserve an appointment."
+msgstr "Запись доступна на 60 дней вперёд. Выбор даты ещё не резервирует время."
+
+msgid "Booking details"
+msgstr "Сведения о записи"
+
+msgid "Cancel at least two hours before the appointment for a full demo refund. Exactly two hours before is included."
+msgstr "Отмените запись не позднее чем за два часа до визита, чтобы получить полный демовозврат. Ровно за два часа — тоже можно."
+
+msgid "Cancel booking"
+msgstr "Отмена записи"
+
+msgid "Cancel selected bookings and refund demo payments"
+msgstr "Отменить выбранные записи и вернуть демооплату"
+
+msgid "Cancel this booking"
+msgstr "Отменить запись"
+
+msgid "Cancel this visit?"
+msgstr "Отменить этот визит?"
+
+msgid "Cancellation closes two hours before the appointment."
+msgstr "Отменить запись можно не позднее чем за два часа до визита."
+
+msgid "Cancellation is allowed until two hours before your appointment, including exactly two hours before the start."
+msgstr "Отменить запись можно не позднее чем за два часа до визита, в том числе ровно за два часа до начала."
+
+msgid "Cancelled"
+msgstr "Отменена"
+
+msgid "Change employee"
+msgstr "Сменить мастера"
+
+msgid "Change password"
+msgstr "Изменить пароль"
+
+msgid "Choose Russian or English."
+msgstr "Выберите русский или английский язык."
+
+#, python-format
+msgid "Choose a date within the next %(days)s days."
+msgstr "Выберите дату в пределах следующих %(days)s дней."
+
+#, python-format
+msgid "Choose a day and time for your visit with %(employee)s. All times are Moscow time."
+msgstr "Выберите дату и время визита к мастеру %(employee)s. Всё время указано по Москве."
+
+msgid "Choose a preferred date"
+msgstr "Выбрать удобную дату"
+
+msgid "Choose an employee"
+msgstr "Выбрать мастера"
+
+msgid "Choose this employee"
+msgstr "Выбрать этого мастера"
+
+msgid "Choose today or a future date."
+msgstr "Выберите сегодняшнюю или будущую дату."
+
+msgid "Choose who you would like to book with."
+msgstr "Выберите мастера, к которому хотите записаться."
+
+msgid "Choose your employee and appointment time, and find our opening hours and cancellation policy."
+msgstr "Выберите мастера и время визита, узнайте часы работы и условия отмены записи."
+
+msgid "Choose your service, employee and a time that suits you. Sign in to keep your bookings together."
+msgstr "Выберите услугу, мастера и удобное время. Войдите в аккаунт, чтобы все ваши записи были под рукой."
+
+msgid "Choosing a time holds it for 10 minutes while you complete demo checkout."
+msgstr "После выбора время удерживается 10 минут для завершения демооплаты."
+
+msgid "Choosing an employee does not reserve an appointment."
+msgstr "Выбор мастера ещё не резервирует время."
+
+msgid "Clear from the start"
+msgstr "Всё понятно заранее"
+
+msgid "Clear price. Time well spent."
+msgstr "Понятная цена. Время с пользой."
+
+msgid "Closed on Sunday."
+msgstr "В воскресенье закрыто."
+
+msgid "Confirm cancellation"
+msgstr "Подтвердить отмену"
+
+msgid "Confirmed"
+msgstr "Подтверждена"
+
+msgid "Continue demo checkout"
+msgstr "Перейти к демооплате"
+
+msgid "Date"
+msgstr "Дата"
+
+msgid "Demo checkout"
+msgstr "Демооплата"
+
+msgid "Demo payment"
+msgstr "Демооплата"
+
+msgid "Demo payment failed"
+msgstr "Ошибка демооплаты"
+
+msgid "Demo payment successful"
+msgstr "Демооплата прошла успешно"
+
+msgid "Demo payments are currently disabled."
+msgstr "Демооплата сейчас отключена."
+
+msgid "Demo payments are disabled."
+msgstr "Демооплата отключена."
+
+msgid "Demo payments."
+msgstr "Демооплата."
+
+#, python-format
+msgid "Duration: %(minutes)s minutes"
+msgstr "Длительность: %(minutes)s мин."
+
+msgid "Email addresses"
+msgstr "Адреса электронной почты"
+
+msgid "Email is saved on this computer instead of sent to an inbox. In the project's Ubuntu terminal, run <code>.venv/bin/python manage.py show_email</code> to read the latest message and open its verification link."
+msgstr "Письма сохраняются на этом компьютере и не отправляются в почтовый ящик. В терминале Ubuntu в папке проекта выполните <code>.venv/bin/python manage.py show_email</code>, чтобы прочитать последнее письмо и открыть ссылку подтверждения."
+
+msgid "Employee"
+msgstr "Мастер"
+
+#, python-format
+msgid "Employee: %(employee)s"
+msgstr "Мастер: %(employee)s"
+
+msgid "Explore our 300 RUB, 30-minute haircut and choose an employee and preferred date for your visit."
+msgstr "Стрижка за 300 RUB за 30 минут. Выберите мастера, удобную дату и время визита."
+
+msgid "Export selected bookings as CSV"
+msgstr "Экспортировать выбранные записи в CSV"
+
+msgid "For a 30-minute haircut, the latest start is 17:30."
+msgstr "Последняя запись на стрижку длительностью 30 минут — в 17:30."
+
+msgid "Full demo refund completed"
+msgstr "Демооплата полностью возвращена"
+
+msgid "Good hair. A little more you."
+msgstr "Хорошая стрижка. Больше уверенности."
+
+msgid "Haircut Studio · Demo administration"
+msgstr "Студия стрижек · Демоадминистрирование"
+
+msgid "Haircut appointment"
+msgstr "Стрижка"
+
+msgid "Haircut booking"
+msgstr "Запись на стрижку"
+
+msgid "Haircut studio"
+msgstr "Студия стрижек"
+
+msgid "Haircut studio home"
+msgstr "Студия стрижек — главная"
+
+msgid "Keep it simple"
+msgstr "Просто и понятно"
+
+msgid "Keep it simple. Make it yours."
+msgstr "Просто. По-вашему."
+
+msgid "Local demo email delivery"
+msgstr "Локальная доставка демописем"
+
+msgid "Main navigation"
+msgstr "Основная навигация"
+
+msgid "Make a little room for yourself. Explore our haircut and find a preferred date for your next visit."
+msgstr "Уделите немного времени себе. Узнайте о нашей стрижке и выберите удобную дату визита."
+
+msgid "Make a little room in your week"
+msgstr "Найдите время для себя"
+
+msgid "Make it part<br>of your week."
+msgstr "Найдите время<br>для себя."
+
+msgid "Make time for yourself."
+msgstr "Найдите время для себя."
+
+msgid "Monday–Saturday"
+msgstr "Понедельник–суббота"
+
+msgid "Monday–Saturday, 09:00–18:00."
+msgstr "Понедельник–суббота, 09:00–18:00."
+
+msgid "Monday–Saturday: 09:00–18:00"
+msgstr "Понедельник–суббота: 09:00–18:00"
+
+msgid "Moscow time"
+msgstr "мск"
+
+msgid "Move or cancel the overlapping appointment before adding time off."
+msgstr "Перенесите или отмените пересекающуюся запись, прежде чем добавить нерабочее время."
+
+msgid "My bookings"
+msgstr "Мои записи"
+
+msgid "My bookings and receipts"
+msgstr "Мои записи и чеки"
+
+msgid "No bookings yet. Choose an employee and a time that works for you."
+msgstr "Записей пока нет. Выберите мастера и удобное время."
+
+msgid "No demo payment was taken. You can choose another appointment."
+msgstr "Демооплата не проводилась. Вы можете выбрать другое время."
+
+msgid "No employees are currently listed for booking."
+msgstr "Сейчас нет мастеров, доступных для записи."
+
+msgid "No real payments or refunds occur."
+msgstr "Настоящие платежи и возвраты не проводятся."
+
+msgid "No services are currently listed."
+msgstr "Сейчас нет доступных услуг."
+
+msgid "No times remain on this day. Try another date or employee."
+msgstr "На этот день свободного времени нет. Выберите другую дату или мастера."
+
+msgid "One simple service, with the details clear from the start."
+msgstr "Одна простая услуга — все условия известны заранее."
+
+msgid "Online cancellation closes two hours before the appointment. Contact the studio for later changes."
+msgstr "Отменить запись на сайте можно не позднее чем за два часа до визита. Для более поздних изменений свяжитесь со студией."
+
+msgid "Open the verification message and follow its link to finish creating your account."
+msgstr "Откройте письмо с подтверждением и перейдите по ссылке, чтобы завершить создание аккаунта."
+
+msgid "Opening hours"
+msgstr "Часы работы"
+
+msgid "Our service"
+msgstr "Наша услуга"
+
+msgid "Page not found"
+msgstr "Страница не найдена"
+
+msgid "Payment time expired"
+msgstr "Время оплаты истекло"
+
+msgid "Payments and refunds are simulated. No real money is charged. All appointment times are Moscow time."
+msgstr "Оплата и возвраты имитируются. Настоящие деньги не списываются. Всё время записи указано по Москве."
+
+msgid "Plan a little time for yourself"
+msgstr "Запланируйте время для себя"
+
+msgid "Plan another visit"
+msgstr "Запланировать ещё один визит"
+
+msgid "Plan your visit"
+msgstr "Запланировать визит"
+
+msgid "Please try again"
+msgstr "Попробуйте ещё раз"
+
+msgid "Preferred date"
+msgstr "Удобная дата"
+
+#, python-format
+msgid "Price: %(price)s RUB"
+msgstr "Цена: %(price)s RUB"
+
+msgid "Reference"
+msgstr "Номер записи"
+
+msgid "Release this hold"
+msgstr "Освободить это время"
+
+msgid "Return to sign in"
+msgstr "Вернуться ко входу"
+
+msgid "Selected bookings processed. Successful demo payments were refunded."
+msgstr "Выбранные записи обработаны. Успешная демооплата возвращена."
+
+#, python-format
+msgid "Selected date: %(day)s"
+msgstr "Выбранная дата: %(day)s"
+
+#, python-format
+msgid "Selected employee: %(employee)s"
+msgstr "Выбранный мастер: %(employee)s"
+
+msgid "Services"
+msgstr "Услуги"
+
+msgid "Show available times"
+msgstr "Показать свободное время"
+
+msgid "Sign in"
+msgstr "Войти"
+
+msgid "Sign out"
+msgstr "Выйти"
+
+msgid "Simple plans. A fresh perspective."
+msgstr "Простые планы. Свежий взгляд."
+
+msgid "Simulate payment failure"
+msgstr "Имитировать ошибку оплаты"
+
+msgid "Simulate successful payment"
+msgstr "Имитировать успешную оплату"
+
+msgid "Six days to find your fresh start."
+msgstr "Шесть дней в неделю для нового образа."
+
+msgid "Skip to content"
+msgstr "Перейти к содержимому"
+
+msgid "Someone to make it yours"
+msgstr "Ваш мастер"
+
+msgid "Studio administration"
+msgstr "Управление студией"
+
+msgid "Sunday: closed"
+msgstr "Воскресенье: выходной"
+
+msgid "Sundays are for slowing down. We’re closed."
+msgstr "Воскресенье — время для отдыха. Мы закрыты."
+
+msgid "That appointment request is invalid or out of date. Please choose again."
+msgstr "Данные записи неверны или устарели. Выберите время ещё раз."
+
+msgid "That payment event has already been used."
+msgstr "Этот результат оплаты уже использован."
+
+msgid "That request or appointment has already been taken. Please choose again."
+msgstr "Этот запрос уже использован или время занято. Выберите ещё раз."
+
+msgid "That time is no longer available. Choose another time."
+msgstr "Это время уже недоступно. Выберите другое время."
+
+msgid "The appointment time must include a time zone."
+msgstr "Для времени записи должен быть указан часовой пояс."
+
+msgid "The classic appointment"
+msgstr "Классическая стрижка"
+
+msgid "The end must be after the start."
+msgstr "Время окончания должно быть позже времени начала."
+
+msgid "The everyday, refreshed"
+msgstr "Обновите привычный образ"
+
+msgid "The payment amount does not match this booking."
+msgstr "Сумма оплаты не соответствует этой записи."
+
+msgid "The payment hold expired. No demo charge was made and the time was released."
+msgstr "Время ожидания оплаты истекло. Демооплата не проводилась, время снова доступно."
+
+msgid "The server confirms the booking only after processing this demo result. Refreshing or resubmitting a result does not charge twice."
+msgstr "Запись подтверждается только после обработки результата демооплаты сервером. Обновление страницы или повторная отправка не приводит к повторному списанию."
+
+msgid "The studio is closed on Sundays. Choose Monday–Saturday."
+msgstr "По воскресеньям студия закрыта. Выберите день с понедельника по субботу."
+
+msgid "The weekly rhythm"
+msgstr "Наше расписание"
+
+msgid "This address is unavailable or the booking belongs to another account."
+msgstr "Этот адрес недоступен или запись принадлежит другому аккаунту."
+
+msgid "This booking can no longer be cancelled online. Confirmed visits require at least two hours' notice."
+msgstr "Эту запись уже нельзя отменить на сайте. Подтверждённый визит нужно отменять не позднее чем за два часа до начала."
+
+msgid "This checkout action is invalid. Refresh the page and try again."
+msgstr "Действие оплаты недействительно. Обновите страницу и попробуйте ещё раз."
+
+msgid "This employee is no longer accepting bookings. Cancel this hold and choose another employee."
+msgstr "Этот мастер больше не принимает записи. Освободите это время и выберите другого мастера."
+
+msgid "This hold has expired. Choose another appointment."
+msgstr "Время ожидания оплаты истекло. Выберите другое время."
+
+msgid "This payment hold has expired. No demo payment was taken."
+msgstr "Время ожидания оплаты истекло. Демооплата не проводилась."
+
+msgid "This request has already been used. Choose the appointment again."
+msgstr "Этот запрос уже использован. Выберите время записи ещё раз."
+
+msgid "This service or employee is no longer listed."
+msgstr "Эта услуга или мастер больше недоступны."
+
+msgid "This simulator does not request card details or move money."
+msgstr "Этот симулятор не запрашивает данные карты и не переводит деньги."
+
+msgid "Time"
+msgstr "Время"
+
+msgid "Too many requests. Please wait one minute and try again."
+msgstr "Слишком много запросов. Подождите одну минуту и попробуйте ещё раз."
+
+msgid "Two-factor authentication and recovery codes"
+msgstr "Двухфакторная аутентификация и коды восстановления"
+
+msgid "Unknown payment result."
+msgstr "Неизвестный результат оплаты."
+
+msgid "Unpaid holds expire after 10 minutes. Eligible cancellations receive a full simulated refund."
+msgstr "Без оплаты время удерживается 10 минут. При своевременной отмене демооплата возвращается полностью."
+
+msgid "Upcoming visits, payment holds and your appointment history."
+msgstr "Предстоящие визиты, ожидание оплаты и история записей."
+
+msgid "Verify your email"
+msgstr "Подтвердите электронную почту"
+
+msgid "View booking"
+msgstr "Посмотреть запись"
+
+msgid "View haircut details"
+msgstr "Подробнее о стрижке"
+
+msgid "View opening hours"
+msgstr "Посмотреть часы работы"
+
+msgid "We could not complete that request. Check My bookings before trying another payment."
+msgstr "Не удалось выполнить запрос. Проверьте раздел «Мои записи», прежде чем повторять оплату."
+
+msgid "Website language"
+msgstr "Язык сайта"
+
+msgid "When plans change"
+msgstr "Когда планы меняются"
+
+msgid "Your account"
+msgstr "Ваш аккаунт"
+
+msgid "Your appointment"
+msgstr "Ваша запись"
+
+msgid "Your booking details and payment status are available in My bookings."
+msgstr "Сведения о записи и статус оплаты доступны в разделе «Мои записи»."
+
+msgid "Your booking is cancelled. Any successful demo payment has been fully refunded."
+msgstr "Запись отменена. Если демооплата прошла успешно, она полностью возвращена."
+
+msgid "Your choice"
+msgstr "Ваш выбор"
+
+msgid "Your first visit starts here."
+msgstr "Здесь начинается ваш первый визит."
+
+#, python-format
+msgid "Your full demo refund of %(price)s RUB is complete."
+msgstr "Демооплата в размере %(price)s RUB полностью возвращена."
+
+msgid "Your next step"
+msgstr "Следующий шаг"
+
+msgid "Your next visit"
+msgstr "Ваш следующий визит"
+
+msgid "Your preferred day"
+msgstr "Выбранный день"
+
+msgid "Your studio account"
+msgstr "Ваш аккаунт в студии"
+
+#, python-format
+msgid "Your time is held until %(time)s Moscow time."
+msgstr "Ваше время удерживается до %(time)s мск."
+
+msgid "Your time, all together"
+msgstr "Все ваши записи"
+
+msgid "Your visit at a glance"
+msgstr "Коротко о вашем визите"
+
+msgid "Your visit, your choice"
+msgstr "Ваш визит — ваш выбор"
+
+msgid "remaining."
+msgstr "осталось."
