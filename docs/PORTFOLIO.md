@@ -77,7 +77,9 @@ PostgreSQL tests exercise booking conflicts and repeated payment requests.
 
 **Technology tags:** Python, Django, PostgreSQL, HTML/CSS, JavaScript, testing.
 
-Use the repository URL once it exists. Add a public demo URL only after actual
+**Source:** [Sasambatra/django-salon-booking](https://github.com/Sasambatra/django-salon-booking).
+The [Russian resume entry](RESUME_RU.md) is ready to adapt for an application.
+Add a public demo URL only after actual
 hosting and delivery configuration have been verified. The local 127.0.0.1 link
 works only on the computer running the application.
 

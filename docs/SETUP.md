@@ -4,6 +4,16 @@ These are manual instructions for a new Ubuntu/WSL checkout. The prepared
 development copy already has its environment and does not need reinstalling.
 All commands start in the repository root, the folder containing manage.py.
 
+Clone the public source, then enter the new folder:
+
+```bash
+git clone https://github.com/Sasambatra/django-salon-booking.git
+cd django-salon-booking
+```
+
+The clone contains source and example settings only; it does not include a
+database, private credentials or an installed virtual environment.
+
 ## 1. Prerequisites
 
 The verified local stack is Python 3.14, PostgreSQL 18, Git and Bash. Python

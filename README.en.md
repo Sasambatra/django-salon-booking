@@ -114,8 +114,8 @@ the owner creates and configures the bot using [the setup guide](docs/TELEGRAM.m
 
 [GitHub Actions](.github/workflows/checks.yml) is configured to run the same
 checks with an isolated PostgreSQL 18 service. Its action versions are pinned.
-The workflow has been prepared locally; a hosted GitHub run is not claimed until
-the repository is pushed and that run finishes.
+The configuration is published, but the first hosted GitHub run has not been
+executed. The verification results above come from local checks.
 
 ## Documentation
 

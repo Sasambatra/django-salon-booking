@@ -6,7 +6,7 @@
 
 Личный учебный проект · Python / Django / PostgreSQL
 
-[Код, скриншоты и инструкция запуска](../README.md)
+[GitHub — Sasambatra/django-salon-booking](https://github.com/Sasambatra/django-salon-booking)
 
 Веб-приложение с выбором мастера и свободного времени, личным кабинетом,
 временным резервом, демонстрационной оплатой и отменой записи.
