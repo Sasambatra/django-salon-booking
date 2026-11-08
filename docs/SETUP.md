@@ -1,5 +1,7 @@
 # Set up a new checkout
 
+[Русский](SETUP.ru.md) · **English**
+
 These are manual instructions for a new Ubuntu/WSL checkout. The prepared
 development copy already has its environment and does not need reinstalling.
 All commands start in the repository root, the folder containing manage.py.

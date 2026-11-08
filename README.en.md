@@ -110,14 +110,16 @@ screen widths. The fresh source/database rehearsal reused the already installed
 pinned packages; it did not perform a new dependency installation.
 The suite includes 34 Telegram checks with fake transport, including the website
 booking/payment/refund flow. Live Telegram delivery remains unverified until
-the owner creates and configures the bot using [the setup guide](docs/TELEGRAM.md).
+the owner creates and configures the bot using [the setup guide](docs/TELEGRAM.en.md).
 
 [GitHub Actions](.github/workflows/checks.yml) is configured to run the same
 checks with an isolated PostgreSQL 18 service. Its action versions are pinned.
-The configuration is published, but the first hosted GitHub run has not been
-executed. The verification results above come from local checks.
+See the [actual workflow runs](https://github.com/Sasambatra/django-salon-booking/actions/workflows/checks.yml)
+for current hosted results. The numerical baseline above records local checks.
 
 ## Documentation
+
+[All guides in Russian and English](docs/README.en.md)
 
 | Guide | Purpose |
 | --- | --- |
@@ -126,7 +128,7 @@ executed. The verification results above come from local checks.
 | [Portfolio and demo](docs/PORTFOLIO.md) | Present the project with concrete examples |
 | [Deployment preparation](docs/DEPLOYMENT.md) | Separate local verification from public-launch work |
 | [Detailed local reference](docs/LOCAL_DEVELOPMENT.md) | Email, owner access, backups, translations and file map |
-| [Telegram setup and commands](docs/TELEGRAM.md) | Create and connect the optional private staff bot; Russian guide |
+| [Telegram setup and commands](docs/TELEGRAM.en.md) | Create and connect the optional private staff bot |
 
 Screenshots contain demo content only. Earlier standalone rule examples are retained in `exercises/`.
 For a Russian CV project entry, see [Resume text](docs/RESUME_RU.md).

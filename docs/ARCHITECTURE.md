@@ -1,5 +1,7 @@
 # Architecture and design decisions
 
+[Русский](ARCHITECTURE.ru.md) · **English**
+
 Haircut Studio is a small, server-rendered Django application. It deliberately
 keeps the customer website, staff tools and shared booking rules in one project.
 There is one seeded offer and multiple employees; it is not a general-purpose

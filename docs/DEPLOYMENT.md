@@ -1,5 +1,7 @@
 # Deployment preparation
 
+[Русский](DEPLOYMENT.ru.md) · **English**
+
 The repository is prepared for local portfolio review. It has no public host,
 domain, real SMTP delivery or live payment provider. The development server is
 not a public production server.
@@ -73,9 +75,9 @@ pinned requirements in an isolated hosted environment and runs the same source,
 translation, migration and test checks as local development. Its disposable
 database credentials are test-only and are unrelated to .env.
 
-The workflow has not been executed on GitHub by this task. Its first hosted run
-needs to complete after publication before a passing badge or hosted status can
-be claimed.
+Review the [actual workflow runs](https://github.com/Sasambatra/django-salon-booking/actions/workflows/checks.yml)
+for hosted results and their commit SHAs. A saved configuration alone does not
+establish that a hosted run passed.
 
 References: [Django deployment checklist](https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/)
 and [GitHub PostgreSQL service containers](https://docs.github.com/en/actions/tutorials/use-containerized-services/create-postgresql-service-containers).

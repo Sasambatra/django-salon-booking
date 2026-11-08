@@ -1,5 +1,7 @@
 # Portfolio presentation and demo
 
+[Русский](PORTFOLIO.ru.md) · **English**
+
 ## Short project description
 
 Haircut Studio is a bilingual appointment-booking application built with Django
